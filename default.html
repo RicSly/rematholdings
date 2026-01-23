@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remat Holdings Limited | Building Africa's Sustainable Future</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #006AFE;
+            --primary-dark: #231F20;
+            --light-blue: #E6F2FF;
+            --medium-blue: #3391FF;
+            --dark-blue: #0055CC;
+            --light-gray: #F5F7FA;
+            --medium-gray: #E1E5EB;
+            --accent-green: #00C853;
+            --accent-gold: #FFB300;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 300px;
+            height: 90px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--white);
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 12px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo-text .tagline {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            line-height: 1.3;
+            max-width: 220px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .live-clock {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--shadow);
+            white-space: nowrap;
+        }
+
+        .live-clock i {
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Desktop Navigation - Horizontal with spacing */
+        .desktop-nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 20px;
+        }
+
+        /* Mobile Navigation - Vertical */
+        .mobile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+        }
+
+        .mobile-nav.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav .nav-link {
+            padding: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .mobile-nav .nav-link:last-child {
+            border-bottom: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .slideshow-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(35,31,32,0.85) 0%, rgba(35,31,32,0.6) 50%, transparent 100%);
+        }
+
+        .slide-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+            max-width: 700px;
+            padding: 0 40px;
+        }
+
+        .slide-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .slide-content p {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .indicator.active {
+            background-color: var(--primary-blue);
+            transform: scale(1.2);
+        }
+
+        .slide-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255,255,255,0.2);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide-nav-btn:hover {
+            background-color: var(--primary-blue);
+        }
+
+        .prev-slide {
+            left: 20px;
+        }
+
+        .next-slide {
+            right: 20px;
+        }
+
+        /* Stats Counter */
+        .stats-counter {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 20px 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .stat-number i {
+            font-size: 2rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Quick Info Bar */
+        .quick-info-bar {
+            background-color: var(--light-blue);
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+
+        .quick-info-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-dark);
+            font-weight: 500;
+        }
+
+        .info-item i {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            display: inline-block;
+        }
+
+        .section-header p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Section - Image Cards */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-image {
+            height: 200px;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .service-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            margin-bottom: 20px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        /* Feature Cards */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 40px 30px;
+            text-align: center;
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+
+        /* Values Section */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--primary-blue);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+        }
+
+        /* Clients Section */
+        .clients-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .client-logo {
+            width: 180px;
+            height: 100px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary-dark);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            padding: 20px;
+            font-size: 1.1rem;
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        /* Contact Form - Enhanced Styling */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        .contact-form-container {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-container h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 106, 254, 0.1);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Subscription Popup */
+        .subscription-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            padding: 30px;
+            z-index: 1001;
+            transform: translateY(120%);
+            transition: transform 0.5s ease;
+            border-left: 5px solid var(--primary-blue);
+        }
+
+        .subscription-popup.active {
+            transform: translateY(0);
+        }
+
+        .subscription-popup h3 {
+            margin-bottom: 10px;
+            color: var(--primary-dark);
+        }
+
+        .subscription-popup p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .subscription-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-popup:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-heavy);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 1100px) {
+            .desktop-nav {
+                gap: 5px;
+            }
+            
+            .nav-link {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .slide-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero {
+                height: 600px;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-right {
+                gap: 15px;
+            }
+            
+            .live-clock {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+            
+            .logo-img {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .logo-text .tagline {
+                font-size: 0.9rem;
+                max-width: 180px;
+            }
+            
+            .subscription-popup {
+                width: 300px;
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slide-content h1 {
+                font-size: 2rem;
+            }
+            
+            .slide-content p {
+                font-size: 1rem;
+            }
+            
+            .hero {
+                height: 500px;
+                margin-bottom: 60px;
+            }
+            
+            .stats-counter {
+                margin-top: -60px;
+                padding: 40px 0;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .quick-info-container {
+                justify-content: center;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+            
+            .slide-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .services-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .logo-text .tagline {
+                font-size: 0.85rem;
+                max-width: 160px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .slide-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                height: 450px;
+            }
+            
+            .feature-cards, .values-container, .business-units {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo {
+                gap: 8px;
+            }
+            
+            .logo-img {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .logo-text .tagline {
+                font-size: 0.8rem;
+                max-width: 140px;
+            }
+            
+            .live-clock {
+                font-size: 0.75rem;
+                padding: 6px 12px;
+            }
+            
+            .subscription-popup {
+                width: calc(100% - 20px);
+                right: 10px;
+                left: 10px;
+                bottom: 10px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Live Clock -->
+    <header>
+        <div class="header-container container">
+            <div class="logo">
+                <div class="logo-img">
+                    <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
+                </div>
+                <div class="logo-text">
+                    <div class="tagline">Building Africa's Sustainable Future</div>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="live-clock">
+                    <i class="fas fa-clock"></i>
+                    <span id="clock">Loading...</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#services" class="nav-link">Our Services</a>
+                    <a href="#clients" class="nav-link">Our Clients</a>
+                    <a href="#partnerships" class="nav-link">Partnership</a>
+                    <a href="media.html" class="nav-link" target="_blank">Media & News</a>
+                    <a href="#contact" class="nav-link">Contact Us</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Our Services</a>
+            <a href="#clients" class="nav-link">Our Clients</a>
+            <a href="#partnerships" class="nav-link">Partnership</a>
+            <a href="media.html" class="nav-link" target="_blank">Media & News</a>
+            <a href="#contact" class="nav-link">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Quick Info Bar -->
+    <div class="quick-info-bar">
+        <div class="container quick-info-container">
+            <div class="info-item">
+                <i class="far fa-clock"></i>
+                <span>08:00am – 05:00pm</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-calendar-week"></i>
+                <span>Monday to Friday</span>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>(+233) 25 779 0251</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section with Slideshow -->
+    <section class="hero" id="home">
+        <div class="slideshow-container">
+            <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('airportaccra.jpg');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Transforming and Building Africa's Sustainable Future</h1>
+                    <p>Strategic investments, operational excellence and technology-enabled solutions for Africa's development.</p>
+                    <a href="#about" class="btn">Discover More</a>
+                </div>
+            </div>
+            
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Investment Guidance</h1>
+                    <p>We bring decades of proven industry expertise in driving our investment approach across diverse African markets.</p>
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+            </div>
+            
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+                <div class="slide-overlay"></div>
+                <div class="slide-content">
+                    <h1>Friendly Assistance</h1>
+                    <p>We're famous for our friendly, personal help with every area of outsourcing and partnership development.</p>
+                    <a href="#contact" class="btn">Partner With Us</a>
+                </div>
+            </div>
+            
+            <button class="slide-nav-btn prev-slide">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slide-nav-btn next-slide">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <div class="slide-indicators">
+                <div class="indicator active" data-slide="0"></div>
+                <div class="indicator" data-slide="1"></div>
+                <div class="indicator" data-slide="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <section class="stats-counter">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">
+                    <i class="fas fa-globe-africa"></i>
+                    <span id="countries">7</span>+
+                </div>
+                <div class="stat-label">African Countries</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <i class="fas fa-industry"></i>
+                    <span id="sectors">6</span>+
+                </div>
+                <div class="stat-label">Business Sectors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <i class="fas fa-handshake"></i>
+                    <span id="partners">50</span>+
+                </div>
+                <div class="stat-label">Strategic Partners</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">
+                    <i class="fas fa-calendar-check"></i>
+                    <span id="years">10</span>+
+                </div>
+                <div class="stat-label">Years of Excellence</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <p>Remat Holdings Limited is a diversified company with an exceptional reputation for ethical, progressive, sustainable and global business best practices, headquartered in Accra, Ghana with operations across Africa.</p>
+            </div>
+            
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>Building Africa's Sustainable Future through transformative solutions that address local challenges while meeting international standards.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To leverage technology and innovation to transform diverse sectors of the African economy including finance, real estate, agriculture, and mining.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Geographic Footprint</h3>
+                    <p>Headquartered in Accra, Ghana with a growing operational footprint across selected African markets through partnerships and project deployments.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section with Image Cards -->
+        <section class="section" id="services">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>We operate through a multi-vertical holding structure, combining direct investments, subsidiary operations, strategic partnerships and advisory services.</p>
+            </div>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="service-overlay"></div>
+                        <h3 class="service-title">Remat Services</h3>
+                    </div>
+                    <div class="service-content">
+                        <p><strong>Staff Recruitment & HR Management</strong></p>
+                        <p>Remat Services offers various services in the field of outsourcing including executive recruitment, workforce outsourcing, HR administration and payroll management.</p>
+                        
+                        <div class="service-features">
+                            <ul>
+                                <li>Executive and professional recruitment</li>
+                                <li>Workforce outsourcing and contract staffing</li>
+                                <li>HR administration and policy development</li>
+                                <li>Payroll management and compliance support</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="services.html#hr-services" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="service-overlay"></div>
+                        <h3 class="service-title">Remat Investments</h3>
+                    </div>
+                    <div class="service-content">
+                        <p><strong>Investment & Business Development</strong></p>
+                        <p>Identifying, structuring, and managing investments in high-growth sectors across Africa from early-stage development through expansion and maturity.</p>
+                        
+                        <div class="service-features">
+                            <ul>
+                                <li>Strategic equity and project investments</li>
+                                <li>Business incubation and acceleration</li>
+                                <li>Market entry and expansion advisory</li>
+                                <li>Joint ventures and public-private partnerships</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="services.html#investment-services" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="service-overlay"></div>
+                        <h3 class="service-title">Sector Solutions</h3>
+                    </div>
+                    <div class="service-content">
+                        <p><strong>Fintech, Real Estate, Agriculture, Healthcare</strong></p>
+                        <p>We provide integrated solutions across multiple sectors, combining technology, market insight, and operational expertise.</p>
+                        
+                        <div class="service-features">
+                            <ul>
+                                <li>Digital financial services and platforms</li>
+                                <li>Property development and advisory</li>
+                                <li>Agribusiness development</li>
+                                <li>Healthcare service support</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="services.html#sector-solutions" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+                        <div class="service-overlay"></div>
+                        <h3 class="service-title">Remat Oil & Gas</h3>
+                    </div>
+                    <div class="service-content">
+                        <p><strong>Support Services</strong></p>
+                        <p>Support services in the oil and gas industry including personnel and cargo transport, security, and operational support solutions.</p>
+                        
+                        <div class="service-features">
+                            <ul>
+                                <li>Personnel transportation and logistics</li>
+                                <li>Cargo handling and supply-chain support</li>
+                                <li>Industrial and site security services</li>
+                                <li>Operational support and compliance solutions</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="services.html#oil-gas" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="section" id="values">
+            <div class="section-header">
+                <h2>Why Choose Us?</h2>
+                <p>Our core values guide how we conduct business, engage with stakeholders, and create value across all our operations.</p>
+            </div>
+            
+            <div class="values-container">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We maintain the highest standards of quality and performance across all our business units and operations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We hold ourselves to the highest moral and professional standards, ensuring ethical conduct in all operations.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <p>Consistent, dependable service delivery that builds trust with our clients and partners across Africa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section class="section" id="clients">
+            <div class="section-header">
+                <h2>Our Clients</h2>
+                <p>We serve a broad client base across multiple sectors, ensuring long-term relationships built on trust, performance, and shared success.</p>
+            </div>
+            
+            <div class="clients-container">
+                <div class="client-logo">Financial Institutions</div>
+                <div class="client-logo">Agribusinesses</div>
+                <div class="client-logo">Real Estate Developers</div>
+                <div class="client-logo">Healthcare Providers</div>
+                <div class="client-logo">Oil & Gas Operators</div>
+                <div class="client-logo">Government Agencies</div>
+            </div>
+        </section>
+
+        <!-- Partnerships Section -->
+        <section class="section" id="partnerships">
+            <div class="section-header">
+                <h2>Partnerships</h2>
+                <p>Remat Holdings actively seeks partnerships with local and international organizations to drive impactful and commercially viable opportunities across Africa.</p>
+            </div>
+            
+            <div class="clients-container">
+                <div class="client-logo">African Development Bank</div>
+                <div class="client-logo">Ghana Investment Centre</div>
+                <div class="client-logo">Ecobank Group</div>
+                <div class="client-logo">African Union</div>
+                <div class="client-logo">World Bank Group</div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <p><strong>Partnership Enquiries:</strong> info@rematholdings.com</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team to explore investment opportunities, partnership possibilities, or learn more about our services.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Head Office</h3>
+                        <p>AE24 Association Loop<br>Airport Residential Area - Accra, Ghana</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Telephone</h3>
+                        <p>(+233) 25 779 0251</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email</h3>
+                        <p>info@rematholdings.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>Monday – Friday<br>08:00am – 05:00pm</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Subscription Popup -->
+    <div class="subscription-popup" id="subscriptionPopup">
+        <button class="close-popup" id="closePopup">
+            <i class="fas fa-times"></i>
+        </button>
+        <h3>Stay Updated</h3>
+        <p>Subscribe to our newsletter for the latest updates on investments, partnerships, and industry insights across Africa.</p>
+        <form class="subscription-form" id="subscriptionForm">
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Enter your email address" required>
+            </div>
+            <button type="submit" class="btn">Subscribe</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Remat Holdings</h3>
+                    <p>Building Africa's Sustainable Future through transformative solutions that address local challenges while meeting international standards.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Our Services</a>
+                    <a href="#clients">Our Clients</a>
+                    <a href="#partnerships">Partnership</a>
+                    <a href="media.html" target="_blank">Media & News</a>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Business Units</h3>
+                    <a href="services.html#hr-services">Remat Services</a>
+                    <a href="services.html#investment-services">Remat Investments</a>
+                    <a href="services.html#sector-solutions">Sector Solutions</a>
+                    <a href="services.html#oil-gas">Remat Oil & Gas</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> AE24 Association Loop, Accra</p>
+                    <p><i class="fas fa-phone"></i> (+233) 25 779 0251</p>
+                    <p><i class="fas fa-envelope"></i> info@rematholdings.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 Remat Holdings Limited. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Legal</a>
+                    <a href="#">Sitemap</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                
+                // Update active nav link
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+        
+        // Live Clock
+        function updateClock() {
+            const now = new Date();
+            const options = { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const clockElement = document.getElementById('clock');
+            clockElement.textContent = now.toLocaleDateString('en-US', options);
+        }
+        
+        // Update clock every second
+        setInterval(updateClock, 1000);
+        updateClock(); // Initial call
+        
+        // Slideshow Functionality
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            indicators[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        // Auto-advance slides
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+        
+        // Set up auto-advance every 5 seconds
+        let slideInterval = setInterval(nextSlide, 5000);
+        
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                // Restart auto-advance
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+        
+        // Add click events to navigation buttons
+        prevBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+        
+        // Animated Stats Counter
+        const statElements = {
+            countries: { target: 7, current: 0, increment: 1, interval: null },
+            sectors: { target: 6, current: 0, increment: 1, interval: null },
+            partners: { target: 50, current: 0, increment: 2, interval: null },
+            years: { target: 10, current: 0, increment: 1, interval: null }
+        };
+        
+        function animateStat(statId, element) {
+            const stat = statElements[statId];
+            if (stat.current < stat.target) {
+                stat.current += stat.increment;
+                if (stat.current > stat.target) stat.current = stat.target;
+                element.textContent = stat.current;
+            } else {
+                clearInterval(stat.interval);
+            }
+        }
+        
+        // Start animations when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    for (const statId in statElements) {
+                        const element = document.getElementById(statId);
+                        if (element) {
+                            statElements[statId].interval = setInterval(() => {
+                                animateStat(statId, element);
+                            }, 100);
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        observer.observe(document.querySelector('.stats-counter'));
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+            
+            // Show subscription popup when near bottom of page
+            const subscriptionPopup = document.getElementById('subscriptionPopup');
+            const scrollPosition = window.innerHeight + window.pageYOffset;
+            const pageHeight = document.documentElement.scrollHeight;
+            
+            if (scrollPosition >= pageHeight - 100 && !localStorage.getItem('subscriptionShown')) {
+                setTimeout(() => {
+                    subscriptionPopup.classList.add('active');
+                }, 1000);
+            }
+        });
+        
+        // Subscription Popup
+        const subscriptionPopup = document.getElementById('subscriptionPopup');
+        const closePopup = document.getElementById('closePopup');
+        const subscriptionForm = document.getElementById('subscriptionForm');
+        
+        closePopup.addEventListener('click', () => {
+            subscriptionPopup.classList.remove('active');
+            localStorage.setItem('subscriptionShown', 'true');
+        });
+        
+        subscriptionForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = subscriptionForm.querySelector('input[type="email"]').value;
+            
+            // In a real application, you would send this data to a server
+            alert(`Thank you for subscribing with ${email}! You'll receive our newsletter shortly.`);
+            subscriptionForm.reset();
+            subscriptionPopup.classList.remove('active');
+            localStorage.setItem('subscriptionShown', 'true');
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`Thank you ${name}! Your message has been received. We'll contact you at ${email} shortly.`);
+            
+            // Reset the form
+            contactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Update active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
