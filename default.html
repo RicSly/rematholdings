@@ -197,11 +197,11 @@
             gap: 20px;
         }
 
-        /* COMPACT LIVE DATE */
+        /* LIVE DATE ONLY - COMPACT */
         .live-date {
             background-color: var(--primary-dark);
             color: var(--white);
-            padding: 3px 10px;
+            padding: 3px 12px;
             border-radius: 50px;
             font-weight: 500;
             font-size: 0.85rem;
@@ -647,48 +647,6 @@
             margin: 0 auto 20px;
             color: var(--primary-blue);
             font-size: 2rem;
-        }
-
-        /* Why Choose Us Section - UPDATED with inverted colors */
-        #values {
-            background-color: #006afe30 !important;
-            color: var(--white);
-        }
-
-        #values .section-header h2 {
-            color: var(--white);
-        }
-
-        #values .section-header h2:after {
-            background: var(--white);
-        }
-
-        #values .section-header p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        #values .value-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: var(--white);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        #values .value-card h3 {
-            color: var(--white);
-        }
-
-        #values .value-card p {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        #values .value-icon {
-            background-color: rgba(255, 255, 255, 0.2);
-            color: var(--white);
-        }
-
-        #values .value-card:before {
-            background-color: var(--white);
         }
 
         /* Values Section */
@@ -1281,8 +1239,8 @@
             
             <div class="header-right">
                 <div class="live-date">
-                    <i class="far fa-calendar-alt"></i>
-                    <span id="date">Loading...</span>
+                    <i class="fas fa-calendar-day"></i>
+                    <span id="currentDate">Loading...</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -1323,7 +1281,7 @@
             </div>
             <div class="info-item">
                 <i class="fas fa-calendar-week"></i>
-                <span>day to Friday</span>
+                <span>Monday to Friday</span>
             </div>
             <div class="info-item">
                 <i class="fas fa-phone"></i>
@@ -1545,7 +1503,7 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section - UPDATED with primary blue background -->
+        <!-- Why Choose Us Section -->
         <section class="section" id="values">
             <div class="section-header">
                 <h2>Why Choose Us?</h2>
@@ -1655,7 +1613,7 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <h3>Business Hours</h3>
-                        <p>day – Friday<br>08:00am – 05:00pm</p>
+                        <p>Monday – Friday<br>08:00am – 05:00pm</p>
                     </div>
                 </div>
                 
@@ -1744,7 +1702,7 @@
                     <p><i class="fas fa-map-marker-alt"></i> AE24 Association Loop, Accra</p>
                     <p><i class="fas fa-phone"></i> (+233) 25 779 0251</p>
                     <p><i class="fas fa-envelope"></i> info@rematholdings.com</p>
-                    <p><i class="fas fa-clock"></i> -Fri: 8am-5pm</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm</p>
                 </div>
             </div>
             
@@ -1795,10 +1753,10 @@
             });
         });
         
-        // Live Date - Shows only date (no time)
+        // Live Date Only - Updated function
         function updateDate() {
             const now = new Date();
-            const dateElement = document.getElementById('date');
+            const dateElement = document.getElementById('currentDate');
             
             // Check screen width for compact display
             const isMobile = window.innerWidth <= 768;
@@ -1808,11 +1766,12 @@
                 const dateStr = now.toLocaleDateString('en-US', {
                     weekday: 'short',
                     month: 'short',
-                    day: 'numeric'
+                    day: 'numeric',
+                    year: 'numeric'
                 });
-                dateElement.textContent = `${dateStr}`;
+                dateElement.textContent = dateStr;
             } else {
-                // FULL FORMAT for desktop - Date only
+                // FULL DATE FORMAT for desktop
                 const options = { 
                     weekday: 'short', 
                     year: 'numeric', 
@@ -1823,7 +1782,7 @@
             }
         }
         
-        // Update date every day and on resize
+        // Update date daily and on resize
         setInterval(updateDate, 86400000); // Update once per day
         window.addEventListener('resize', updateDate);
         updateDate(); // Initial call
@@ -2024,5 +1983,3 @@
     </script>
 </body>
 </html>
-
-
