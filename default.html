@@ -197,8 +197,8 @@
             gap: 20px;
         }
 
-        /* COMPACT LIVE TIME */
-        .live-clock {
+        /* COMPACT LIVE DATE */
+        .live-date {
             background-color: var(--primary-dark);
             color: var(--white);
             padding: 3px 10px;
@@ -215,13 +215,13 @@
             overflow: hidden;
         }
 
-        .live-clock i {
+        .live-date i {
             color: var(--accent-gold);
             font-size: 0.9rem;
             flex-shrink: 0;
         }
 
-        .live-clock span {
+        .live-date span {
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -649,6 +649,48 @@
             font-size: 2rem;
         }
 
+        /* Why Choose Us Section - UPDATED with inverted colors */
+        #values {
+            background-color: var(--primary-blue) !important;
+            color: var(--white);
+        }
+
+        #values .section-header h2 {
+            color: var(--white);
+        }
+
+        #values .section-header h2:after {
+            background: var(--white);
+        }
+
+        #values .section-header p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        #values .value-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #values .value-card h3 {
+            color: var(--white);
+        }
+
+        #values .value-card p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        #values .value-icon {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+        }
+
+        #values .value-card:before {
+            background-color: var(--white);
+        }
+
         /* Values Section */
         .values-container {
             display: grid;
@@ -988,7 +1030,7 @@
                 font-size: 0.9rem;
             }
             
-            .live-clock span {
+            .live-date span {
                 font-size: 0.8rem;
             }
         }
@@ -1023,14 +1065,14 @@
                 gap: 15px;
             }
             
-            /* COMPACT LIVE TIME ON MOBILE */
-            .live-clock {
+            /* COMPACT LIVE DATE ON MOBILE */
+            .live-date {
                 padding: 6px 12px;
                 font-size: 0.75rem;
                 max-width: 200px;
             }
             
-            .live-clock i {
+            .live-date i {
                 font-size: 0.8rem;
             }
             
@@ -1125,14 +1167,14 @@
                 display: block;
             }
             
-            /* COMPACT LIVE TIME ON SMALLER MOBILE */
-            .live-clock {
+            /* COMPACT LIVE DATE ON SMALLER MOBILE */
+            .live-date {
                 padding: 5px 10px;
                 font-size: 0.7rem;
                 max-width: 150px;
             }
             
-            .live-clock span {
+            .live-date span {
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
@@ -1155,15 +1197,15 @@
                 grid-template-columns: 1fr;
             }
             
-            /* ULTRA-COMPACT LIVE TIME FOR SMALL PHONES */
-            .live-clock {
+            /* ULTRA-COMPACT LIVE DATE FOR SMALL PHONES */
+            .live-date {
                 padding: 4px 8px;
                 font-size: 0.65rem;
                 max-width: 120px;
                 gap: 5px;
             }
             
-            .live-clock i {
+            .live-date i {
                 font-size: 0.7rem;
             }
             
@@ -1205,7 +1247,7 @@
         
         @media (max-width: 400px) {
             /* EXTREME SMALL SCREENS */
-            .live-clock {
+            .live-date {
                 display: none; /* Hide on very small screens if needed */
             }
             
@@ -1225,7 +1267,7 @@
     </style>
 </head>
 <body>
-    <!-- Header with Live Clock -->
+    <!-- Header with Live Date -->
     <header>
         <div class="header-container container">
             <div class="logo">
@@ -1238,9 +1280,9 @@
             </div>
             
             <div class="header-right">
-                <div class="live-clock">
-                    <i class="fas fa-clock"></i>
-                    <span id="clock">Loading...</span>
+                <div class="live-date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span id="date">Loading...</span>
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -1503,7 +1545,7 @@
             </div>
         </section>
 
-        <!-- Why Choose Us Section -->
+        <!-- Why Choose Us Section - UPDATED with primary blue background -->
         <section class="section" id="values">
             <div class="section-header">
                 <h2>Why Choose Us?</h2>
@@ -1753,45 +1795,38 @@
             });
         });
         
-        // Live Clock - Compact version for mobile
-        function updateClock() {
+        // Live Date - Shows only date (no time)
+        function updateDate() {
             const now = new Date();
-            const clockElement = document.getElementById('clock');
+            const dateElement = document.getElementById('date');
             
             // Check screen width for compact display
             const isMobile = window.innerWidth <= 768;
             
             if (isMobile) {
-                // COMPACT FORMAT for mobile
-                const timeStr = now.toLocaleTimeString('en-US', {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
-                });
+                // COMPACT FORMAT for mobile - Date only
                 const dateStr = now.toLocaleDateString('en-US', {
+                    weekday: 'short',
                     month: 'short',
                     day: 'numeric'
                 });
-                clockElement.textContent = `${dateStr} ${timeStr}`;
+                dateElement.textContent = `${dateStr}`;
             } else {
-                // FULL FORMAT for desktop
+                // FULL FORMAT for desktop - Date only
                 const options = { 
-                    weekday: 'short', 
+                    weekday: 'long', 
                     year: 'numeric', 
-                    month: 'short', 
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    hour12: true
+                    month: 'long', 
+                    day: 'numeric'
                 };
-                clockElement.textContent = now.toLocaleDateString('en-US', options);
+                dateElement.textContent = now.toLocaleDateString('en-US', options);
             }
         }
         
-        // Update clock every second and on resize
-        setInterval(updateClock, 1000);
-        window.addEventListener('resize', updateClock);
-        updateClock(); // Initial call
+        // Update date every day and on resize
+        setInterval(updateDate, 86400000); // Update once per day
+        window.addEventListener('resize', updateDate);
+        updateDate(); // Initial call
         
         // Slideshow Functionality
         const slides = document.querySelectorAll('.slide');
@@ -1989,7 +2024,3 @@
     </script>
 </body>
 </html>
-
-
-
-
