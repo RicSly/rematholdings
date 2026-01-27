@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remat Holdings Limited | Building Africa's Sustainable Future</title>
+    <title>Remat Holdings</title>
     <link rel="icon" type="image/png" href="rematicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,7 +132,7 @@
             color: var(--white);
         }
 
-        /* Header Styles - REDESIGNED FOR FULL-WIDTH NAV */
+        /* Header Styles - REDESIGNED WITH NAV ON RIGHT */
         header {
             background-color: var(--white);
             box-shadow: var(--shadow);
@@ -141,26 +141,34 @@
             z-index: 1000;
         }
 
-        .header-top {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 5px 20px;
+            padding: 10px 20px;
             min-height: 80px;
             width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
             flex-shrink: 0;
         }
 
-        /* FIXED LOGO SIZE */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        /* LOGO IMAGE - PRESSABLE LINK */
         .logo-img {
-            width: 150px; /* Fixed size */
-            height: 80px; /* Fixed size */
+            width: 150px;
+            height: 80px;
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -169,6 +177,12 @@
             position: relative;
             background-color: var(--white);
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0, 106, 254, 0.15);
         }
 
         .logo-img img {
@@ -178,68 +192,22 @@
             padding: 10px;
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .logo-text .tagline {
-            font-size: 0.8rem;
-            color: var(--primary-blue);
-            font-weight: 600;
-            line-height: 1.2;
-            max-width: 200px;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: var(--primary-dark);
-            cursor: pointer;
-            padding: 5px;
-            flex-shrink: 0;
-        }
-
-        /* FULL-WIDTH DESKTOP NAVIGATION */
-        .full-width-nav {
-            background-color: var(--primary-dark);
-            width: 100%;
-            display: block;
-        }
-
-        .nav-container {
-            width: 100%;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
+        /* DESKTOP NAVIGATION - ON RIGHT SIDE */
         .desktop-nav {
             display: flex;
-            justify-content: space-around;
             align-items: center;
-            width: 100%;
-            padding: 0;
+            gap: 5px;
         }
 
         .nav-link {
-            padding: 15px 20px;
+            padding: 12px 18px;
             font-weight: 500;
-            color: var(--white);
+            color: var(--primary-dark);
             transition: var(--transition);
             position: relative;
             white-space: nowrap;
             font-size: 0.95rem;
-            flex: 1;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .nav-link:last-child {
-            border-right: none;
+            border-radius: var(--border-radius);
         }
 
         .nav-link:hover, .nav-link.active {
@@ -251,7 +219,8 @@
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
             height: 3px;
             background-color: var(--accent-gold);
@@ -259,10 +228,21 @@
         }
 
         .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
+            width: 80%;
         }
 
         /* Mobile Navigation - VERTICAL MENU */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
         .mobile-nav {
             position: fixed;
             top: 80px;
@@ -949,17 +929,6 @@
         }
 
         /* Mobile Responsive Styles */
-        @media (max-width: 1100px) {
-            .nav-link {
-                padding: 15px 15px;
-                font-size: 0.9rem;
-            }
-            
-            .live-date span {
-                font-size: 0.8rem;
-            }
-        }
-
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.2rem;
@@ -977,8 +946,8 @@
                 height: 600px;
             }
             
-            /* Hide full-width nav on mobile */
-            .full-width-nav {
+            /* Hide desktop nav on mobile */
+            .desktop-nav {
                 display: none;
             }
             
@@ -986,41 +955,16 @@
                 display: block;
             }
             
-            .header-right {
-                gap: 15px;
-            }
-            
-            /* COMPACT LIVE DATE ON MOBILE */
-            .live-date {
-                padding: 6px 12px;
-                font-size: 0.75rem;
-                max-width: 200px;
-            }
-            
-            .live-date i {
-                font-size: 0.8rem;
-            }
-            
-            /* FIXED LOGO SIZE - same on all screens */
+            /* FIXED LOGO SIZE */
             .logo-img {
-                width: 80px;
+                width: 150px;
                 height: 80px;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.9rem;
-                max-width: 180px;
             }
             
             .subscription-popup {
                 width: 300px;
                 right: 10px;
                 bottom: 10px;
-            }
-            
-            /* BETTER HEADER ALIGNMENT */
-            .header-top {
-                padding: 5px 15px;
             }
         }
 
@@ -1047,11 +991,6 @@
                 font-size: 2rem;
             }
             
-            .quick-info-container {
-                justify-content: center;
-                text-align: center;
-            }
-            
             .section {
                 padding: 60px 0;
             }
@@ -1074,83 +1013,9 @@
                 grid-template-columns: 1fr;
             }
             
-            /* HEADER OPTIMIZATION FOR MOBILE */
-            .header-top {
-                flex-wrap: nowrap;
-            }
-            
-            .logo {
-                flex-direction: row;
-                align-items: center;
-                gap: 10px;
-                min-width: 0;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.85rem;
-                max-width: 160px;
-                display: block;
-            }
-            
-            /* COMPACT LIVE DATE ON SMALLER MOBILE */
-            .live-date {
-                padding: 5px 10px;
-                font-size: 0.7rem;
-                max-width: 150px;
-            }
-            
-            .live-date span {
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .slide-content h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero {
-                height: 450px;
-            }
-            
-            .feature-cards, .values-container, .business-units {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-            
-            /* ULTRA-COMPACT LIVE DATE FOR SMALL PHONES */
-            .live-date {
-                padding: 4px 8px;
-                font-size: 0.65rem;
-                max-width: 120px;
-                gap: 5px;
-            }
-            
-            .live-date i {
-                font-size: 0.7rem;
-            }
-            
-            /* FIXED LOGO SIZE - consistent */
             .logo-img {
-                width: 70px;
+                width: 130px;
                 height: 70px;
-            }
-            
-            .logo-text .tagline {
-                font-size: 0.75rem;
-                max-width: 140px;
-            }
-            
-            .header-top {
-                padding: 5px 10px;
-            }
-            
-            .mobile-menu-btn {
-                font-size: 1.3rem;
             }
             
             .subscription-popup {
@@ -1163,63 +1028,63 @@
             .contact-container {
                 grid-template-columns: 1fr;
             }
-            
-            .quick-info-container {
-                flex-direction: column;
-                gap: 10px;
-            }
         }
-        
-        @media (max-width: 400px) {
-            /* EXTREME SMALL SCREENS */
-            .live-date {
-                display: none; /* Hide on very small screens if needed */
+
+        @media (max-width: 576px) {
+            .slide-content h1 {
+                font-size: 1.8rem;
             }
             
-            .logo-text .tagline {
-                display: none; /* Hide tagline on very small screens */
+            .hero {
+                height: 450px;
             }
             
-            .logo {
-                gap: 5px;
+            .feature-cards, .values-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
             }
             
             .logo-img {
-                width: 65px;
+                width: 120px;
                 height: 65px;
+            }
+            
+            .header-container {
+                padding: 10px 15px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Full-Width Navigation -->
+    <!-- Header with Right-Side Navigation -->
     <header>
-        <div class="header-top">
+        <div class="header-container">
             <div class="logo">
-                <div class="logo-img">
-                    <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
-                </div>
+                <!-- LOGO AS PRESSABLE LINK TO HOME -->
+                <a href="#home" class="logo-link">
+                    <div class="logo-img">
+                        <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
+                    </div>
+                </a>
             </div>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- FULL-WIDTH DESKTOP NAVIGATION -->
-        <div class="full-width-nav">
-            <div class="nav-container">
-                <nav class="desktop-nav">
-                    <a href="#home" class="nav-link active">Home</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#services" class="nav-link">Our Services</a>
-                    <a href="#clients" class="nav-link">Our Clients</a>
-                    <a href="#partnerships" class="nav-link">Partnership</a>
-                    <a href="media.html" class="nav-link" target="_blank">Media & News</a>
-                    <a href="#contact" class="nav-link">Contact Us</a>
-                </nav>
-            </div>
+            
+            <!-- DESKTOP NAVIGATION ON RIGHT SIDE -->
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#clients" class="nav-link">Clients</a>
+                <a href="#partnerships" class="nav-link">Partnership</a>
+                <a href="media.html" class="nav-link" target="_blank">Media & News</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
         
         <!-- Mobile Navigation - VERTICAL MENU -->
@@ -1233,7 +1098,6 @@
             <a href="#contact" class="nav-link">Contact Us</a>
         </nav>
     </header>
-
 
     <!-- Hero Section with Slideshow -->
     <section class="hero" id="home">
@@ -1698,40 +1562,6 @@
             });
         });
         
-        // Live Date Only - Updated function
-        function updateDate() {
-            const now = new Date();
-            const dateElement = document.getElementById('currentDate');
-            
-            // Check screen width for compact display
-            const isMobile = window.innerWidth <= 768;
-            
-            if (isMobile) {
-                // COMPACT FORMAT for mobile - Date only
-                const dateStr = now.toLocaleDateString('en-US', {
-                    weekday: 'short',
-                    month: 'short',
-                    day: 'numeric',
-                    year: 'numeric'
-                });
-                dateElement.textContent = dateStr;
-            } else {
-                // FULL DATE FORMAT for desktop
-                const options = { 
-                    weekday: 'short', 
-                    year: 'numeric', 
-                    month: 'short', 
-                    day: 'numeric'
-                };
-                dateElement.textContent = now.toLocaleDateString('en-US', options);
-            }
-        }
-        
-        // Update date daily and on resize
-        setInterval(updateDate, 86400000); // Update once per day
-        window.addEventListener('resize', updateDate);
-        updateDate(); // Initial call
-        
         // Slideshow Functionality
         const slides = document.querySelectorAll('.slide');
         const indicators = document.querySelectorAll('.indicator');
@@ -1898,7 +1728,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 140, // Adjusted for new header height
+                        top: targetElement.offsetTop - 100, // Adjusted for header height
                         behavior: 'smooth'
                     });
                 }
@@ -1913,7 +1743,7 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 150)) { // Adjusted for new header height
+                if (scrollY >= (sectionTop - 120)) { // Adjusted for header height
                     current = section.getAttribute('id');
                 }
             });
@@ -1928,9 +1758,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
