@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remat Services - Staff Recruitment & HR Management | Remat Holdings</title>
+    <link rel="icon" type="image/png" href="rematicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #006AFE;
+            --primary-dark: #231F20;
+            --light-blue: #E6F2FF;
+            --medium-blue: #3391FF;
+            --dark-blue: #0055CC;
+            --light-gray: #F5F7FA;
+            --medium-gray: #E1E5EB;
+            --accent-green: #00C853;
+            --accent-gold: #FFB300;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-dark);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            min-height: 80px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 150px;
+            height: 80px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            background-color: var(--white);
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .logo-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 12px rgba(0, 106, 254, 0.15);
+        }
+
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link {
+            padding: 12px 18px;
+            font-weight: 500;
+            color: var(--primary-dark);
+            transition: var(--transition);
+            position: relative;
+            white-space: nowrap;
+            font-size: 0.95rem;
+            border-radius: var(--border-radius);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
+        .mobile-nav {
+            position: fixed;
+            top: 80px;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            flex-direction: column;
+            padding: 20px;
+            box-shadow: var(--shadow);
+            transform: translateY(-100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
+            display: flex;
+        }
+
+        .mobile-nav.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hero Banner */
+        .service-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .service-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgdmlld0JveD0iMCAwIDYwMCA2MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMEg2MDBWNjAwSDBWMFoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            opacity: 0.3;
+        }
+
+        /* Main Content */
+        main {
+            padding: 80px 0;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header.center {
+            text-align: center;
+        }
+
+        .section-header.center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Service Overview */
+        .service-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .service-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-intro {
+            padding-right: 20px;
+        }
+
+        .service-intro h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Service Features */
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-blue);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .process-timeline:before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--primary-blue);
+        }
+
+        .process-step {
+            position: relative;
+            padding-left: 80px;
+            margin-bottom: 50px;
+        }
+
+        .process-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 64px;
+            height: 64px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 106, 254, 0.3);
+        }
+
+        .step-content {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .step-content h3 {
+            margin-bottom: 10px;
+        }
+
+        /* Industries Served */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .industry-card {
+            background-color: var(--white);
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .industry-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section h2:after {
+            background-color: var(--accent-gold);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cta-section p {
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+        }
+
+        .contact-form-container {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form-container h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-dark);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--light-gray);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(0, 106, 254, 0.1);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-column a {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 10px;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .footer-column a:hover {
+            color: var(--primary-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-heavy);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .logo-img {
+                width: 150px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service-hero {
+                padding: 80px 0 40px;
+            }
+            
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .service-hero p {
+                font-size: 1rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .service-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-intro {
+                padding-right: 0;
+            }
+            
+            .service-features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form-container {
+                padding: 30px 20px;
+            }
+            
+            .process-timeline:before {
+                left: 32px;
+            }
+            
+            .process-step {
+                padding-left: 70px;
+            }
+            
+            .step-number {
+                width: 56px;
+                height: 56px;
+                font-size: 1.3rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-img {
+                width: 120px;
+                height: 65px;
+            }
+            
+            .header-container {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-img">
+                        <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#services" class="nav-link active">Services</a>
+                <a href="index.html#clients" class="nav-link">Clients</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+                <a href="media.html" class="nav-link" target="_blank">Media</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#services" class="nav-link active">Services</a>
+            <a href="index.html#clients" class="nav-link">Clients</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+            <a href="media.html" class="nav-link" target="_blank">Media</a>
+        </nav>
+    </header>
+
+    <!-- Service Hero Banner -->
+    <section class="service-hero">
+        <div class="hero-pattern"></div>
+        <div class="container">
+            <div class="service-hero-content">
+                <h1>Remat Services</h1>
+                <p class="tagline">Comprehensive Staff Recruitment & HR Management Solutions</p>
+                <p>Transform your workforce with our expert recruitment, HR administration, and talent management services tailored for African markets.</p>
+                <a href="#contact" class="btn">Request HR Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Service Overview -->
+        <section class="section">
+            <div class="service-overview">
+                <div class="service-image">
+                    <!-- You can replace with actual HR/recruitment image -->
+                    <img src="https://images.unsplash.com/photo-1551836026-d5c2c0b0b8a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="HR Recruitment Team">
+                </div>
+                <div class="service-intro">
+                    <h2>Your Partner in Human Capital Development</h2>
+                    <p>Remat Services specializes in providing comprehensive human resource solutions designed to help businesses build, manage, and retain top talent across Africa. With over a decade of experience in the African market, we understand the unique challenges and opportunities in talent acquisition and management.</p>
+                    <p>Our services cover the entire employee lifecycle – from strategic workforce planning and executive recruitment to HR administration, compliance, and performance management.</p>
+                    
+                    <div style="margin-top: 30px; display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div class="info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Executive & Professional Recruitment</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Workforce Outsourcing Solutions</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>HR Compliance & Administration</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Services -->
+        <section class="section" style="background-color: var(--light-gray);">
+            <div class="section-header center">
+                <h2>Our Core HR Services</h2>
+                <p>We offer a comprehensive suite of HR solutions designed to meet the diverse needs of businesses operating in Africa</p>
+            </div>
+            
+            <div class="service-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Executive Recruitment</h3>
+                    <p>Specialized search for C-level, senior management, and specialized professionals across all industries. We identify and attract top talent with the right cultural fit for your organization.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Board & Executive Search</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Leadership Assessment</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Succession Planning</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Workforce Outsourcing</h3>
+                    <p>Flexible staffing solutions including contract staffing, temporary placements, and complete workforce outsourcing. We handle recruitment, payroll, and HR administration so you can focus on core business.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Contract Staffing</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Temporary Placements</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Payroll Management</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3>HR Administration</h3>
+                    <p>Comprehensive HR support including policy development, employee handbook creation, compliance management, and HRIS implementation tailored to local labor laws across African countries.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Policy Development</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Compliance Management</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ HR Technology Solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training & Development</h3>
+                    <p>Customized training programs, leadership development, and skills enhancement workshops designed to improve employee performance and organizational effectiveness.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Leadership Development</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Technical Skills Training</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Compliance Training</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Labor Law Compliance</h3>
+                    <p>Expert guidance on employment law, labor relations, dispute resolution, and regulatory compliance across multiple African jurisdictions to minimize legal risks.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Employment Contracts</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Dispute Resolution</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Regulatory Advisory</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Management</h3>
+                    <p>Design and implementation of performance evaluation systems, KPIs, incentive programs, and employee engagement strategies to drive productivity and retention.</p>
+                    <ul style="margin-top: 15px;">
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Performance Systems</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Employee Engagement</li>
+                        <li style="padding-left: 20px; position: relative; margin-bottom: 8px; color: var(--text-light);">✓ Retention Strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recruitment Process -->
+        <section class="section">
+            <div class="section-header center">
+                <h2>Our Recruitment Process</h2>
+                <p>A systematic approach to finding and placing the right talent for your organization</p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Needs Assessment & Planning</h3>
+                        <p>We begin with a thorough consultation to understand your organizational needs, culture, and specific role requirements. This includes job analysis, competency mapping, and recruitment strategy development.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Sourcing & Candidate Identification</h3>
+                        <p>Utilizing our extensive database, professional networks, and targeted search methods to identify qualified candidates. We employ both active and passive candidate sourcing strategies across Africa.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Screening & Assessment</h3>
+                        <p>Rigorous screening including competency-based interviews, technical assessments, reference checks, and background verification to ensure candidate suitability and cultural fit.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Selection & Offer Management</h3>
+                        <p>Facilitating the final selection process, negotiating employment terms, and managing the offer process to ensure successful candidate onboarding and satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Onboarding & Post-Placement Support</h3>
+                        <p>Comprehensive onboarding support and regular follow-up to ensure successful integration. We provide post-placement check-ins and performance monitoring for up to 12 months.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Served -->
+        <section class="section" style="background-color: var(--light-gray);">
+            <div class="section-header center">
+                <h2>Industries We Serve</h2>
+                <p>Our HR and recruitment expertise spans multiple sectors across the African continent</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Banking & Finance</h3>
+                    <p>Recruitment of financial professionals, compliance officers, and banking executives across Africa.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3>Oil & Gas</h3>
+                    <p>Specialized recruitment for technical, operational, and management roles in the energy sector.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Real Estate</h3>
+                    <p>HR solutions for property development, facility management, and real estate advisory firms.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Agribusiness</h3>
+                    <p>Talent acquisition for agricultural enterprises, from farm management to agri-processing.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Recruitment of medical professionals, healthcare administrators, and clinical staff.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>Tech talent acquisition including software developers, IT managers, and digital transformation specialists.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Logistics</h3>
+                    <p>HR solutions for transportation, supply chain, and logistics companies across Africa.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Hospitality</h3>
+                    <p>Talent management for hotels, resorts, restaurants, and tourism businesses.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section">
+            <div class="section-header center">
+                <h2>Why Choose Remat Services?</h2>
+                <p>What sets us apart in the competitive HR and recruitment landscape</p>
+            </div>
+            
+            <div class="service-features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Deep Local Knowledge</h3>
+                    <p>With operations across 7+ African countries, we understand local labor markets, cultural nuances, and regulatory environments that impact talent acquisition and management.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Targeted Approach</h3>
+                    <p>We don't believe in one-size-fits-all solutions. Each client engagement is customized based on specific industry, organizational culture, and strategic objectives.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Compliance Assurance</h3>
+                    <p>Our experts ensure all recruitment and HR practices comply with local employment laws, reducing legal risks and ensuring ethical standards are maintained.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Metrics</h3>
+                    <p>We provide detailed analytics and reporting on recruitment metrics, time-to-fill, quality of hire, and ROI to demonstrate the value of our partnership.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <div style="background-color: var(--light-blue); padding: 40px; border-radius: var(--border-radius); max-width: 800px; margin: 0 auto;">
+                    <h3 style="color: var(--primary-dark); margin-bottom: 20px;">Our Success Metrics</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px; text-align: center;">
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-blue);">85%</div>
+                            <div style="color: var(--text-light);">Retention Rate</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-blue);">30%</div>
+                            <div style="color: var(--text-light);">Faster Time-to-Hire</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-blue);">200+</div>
+                            <div style="color: var(--text-light);">Clients Served</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2.5rem; font-weight: 700; color: var(--primary-blue);">95%</div>
+                            <div style="color: var(--text-light);">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your HR Function?</h2>
+                <p>Partner with Remat Services to build a world-class workforce that drives your business forward. Our team of HR experts is ready to help you navigate the complexities of talent management in Africa.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">Schedule a Consultation</a>
+                    <a href="tel:+233257790251" class="btn btn-secondary">
+                        <i class="fas fa-phone-alt"></i> Call Us: (+233) 25 779 0251
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+            <div class="section-header center">
+                <h2>Contact Our HR Team</h2>
+                <p>Get in touch to discuss your staffing needs, HR challenges, or request a proposal</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>HR Helpline</h3>
+                        <p>For immediate HR assistance or recruitment inquiries:</p>
+                        <p style="font-weight: 600; margin-top: 10px;">(+233) 25 779 0251</p>
+                        <p>hrservices@rematholdings.com</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Our Office</h3>
+                        <p>AE24 Association Loop<br>Airport Residential Area<br>Accra, Ghana</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem; color: var(--text-light);">Mon-Fri: 8:00am - 5:00pm</p>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Request a Proposal</h3>
+                        <p>Looking for a customized HR solution? Download our service brochure or request a tailored proposal.</p>
+                        <a href="#" class="btn" style="margin-top: 15px; width: 100%; text-align: center;">Download Brochure</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form id="hrContactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hrName">Full Name *</label>
+                                <input type="text" id="hrName" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hrEmail">Email Address *</label>
+                                <input type="email" id="hrEmail" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="hrCompany">Company Name *</label>
+                                <input type="text" id="hrCompany" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="hrPhone">Phone Number</label>
+                                <input type="tel" id="hrPhone" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hrService">Service Interest</label>
+                            <select id="hrService" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="recruitment">Executive Recruitment</option>
+                                <option value="outsourcing">Workforce Outsourcing</option>
+                                <option value="hradmin">HR Administration</option>
+                                <option value="training">Training & Development</option>
+                                <option value="compliance">Compliance Advisory</option>
+                                <option value="other">Other HR Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hrMessage">Message *</label>
+                            <textarea id="hrMessage" class="form-control" rows="5" required placeholder="Please describe your HR needs, challenges, or specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Submit HR Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Remat Services</h3>
+                    <p>Comprehensive HR and recruitment solutions for businesses across Africa. Part of Remat Holdings Limited.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>HR Services</h3>
+                    <a href="#recruitment">Executive Recruitment</a>
+                    <a href="#outsourcing">Workforce Outsourcing</a>
+                    <a href="#hradmin">HR Administration</a>
+                    <a href="#training">Training & Development</a>
+                    <a href="#compliance">Labor Law Compliance</a>
+                    <a href="#performance">Performance Management</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About Remat</a>
+                    <a href="index.html#services">All Services</a>
+                    <a href="index.html#clients">Our Clients</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="media.html" target="_blank">Media & News</a>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> AE24 Association Loop, Accra</p>
+                    <p><i class="fas fa-phone"></i> (+233) 25 779 0251</p>
+                    <p><i class="fas fa-envelope"></i> hrservices@rematholdings.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2026 Remat Services | A Division of Remat Holdings Limited. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Form Submission
+        const hrContactForm = document.getElementById('hrContactForm');
+        
+        hrContactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('hrName').value;
+            const email = document.getElementById('hrEmail').value;
+            const company = document.getElementById('hrCompany').value;
+            const service = document.getElementById('hrService').value;
+            const message = document.getElementById('hrMessage').value;
+            
+            // In a real application, you would send this data to a server
+            // For this demo, we'll just show an alert
+            alert(`Thank you ${name} from ${company}! Your HR inquiry has been received. Our team will contact you at ${email} within 24 hours to discuss your ${service ? service + ' ' : ''}needs.`);
+            
+            // Reset the form
+            hrContactForm.reset();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
