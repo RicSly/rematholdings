@@ -192,41 +192,6 @@
             max-width: 200px;
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* LIVE DATE ONLY - COMPACT */
-        .live-date {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding: 3px 12px;
-            border-radius: 50px;
-            font-weight: 500;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: var(--shadow);
-            white-space: nowrap;
-            flex-shrink: 1;
-            min-width: 0;
-            overflow: hidden;
-        }
-
-        .live-date i {
-            color: var(--accent-gold);
-            font-size: 0.9rem;
-            flex-shrink: 0;
-        }
-
-        .live-date span {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -494,21 +459,6 @@
         .stat-label {
             font-size: 1rem;
             color: rgba(255,255,255,0.8);
-        }
-
-        /* Quick Info Bar */
-        .quick-info-bar {
-            background-color: var(--light-blue);
-            padding: 5px 0;
-            margin-bottom: 1px;
-        }
-
-        .quick-info-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
         .info-item {
@@ -1249,16 +1199,7 @@
                 <div class="logo-img">
                     <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
                 </div>
-                <div class="logo-text">
-                    <div class="tagline">Building Africa's Sustainable Future</div>
-                </div>
             </div>
-            
-            <div class="header-right">
-                <div class="live-date">
-                    <i class="fas fa-calendar-day"></i>
-                    <span id="currentDate">Loading...</span>
-                </div>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -1293,23 +1234,6 @@
         </nav>
     </header>
 
-    <!-- Quick Info Bar -->
-    <div class="quick-info-bar">
-        <div class="container quick-info-container">
-            <div class="info-item">
-                <i class="far fa-clock"></i>
-                <span>08:00am – 05:00pm</span>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-calendar-week"></i>
-                <span>Monday to Friday</span>
-            </div>
-            <div class="info-item">
-                <i class="fas fa-phone"></i>
-                <span>(+233) 25 779 0251</span>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section with Slideshow -->
     <section class="hero" id="home">
@@ -2004,6 +1928,7 @@
     </script>
 </body>
 </html>
+
 
 
 
