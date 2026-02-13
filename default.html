@@ -28,17 +28,14 @@
             --border-radius: 8px;
             --transition: all 0.3s ease;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         html {
             scroll-behavior: smooth;
         }
-
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
@@ -46,25 +43,21 @@
             background-color: var(--white);
             overflow-x: hidden;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             line-height: 1.3;
             margin-bottom: 1rem;
         }
-
         h1 {
             font-size: 2.5rem;
         }
-
         h2 {
             font-size: 2rem;
             color: var(--primary-dark);
             position: relative;
             padding-bottom: 0.5rem;
         }
-
         h2:after {
             content: '';
             position: absolute;
@@ -75,33 +68,27 @@
             background: var(--primary-blue);
             border-radius: 2px;
         }
-
         h3 {
             font-size: 1.5rem;
             color: var(--primary-blue);
         }
-
         p {
             margin-bottom: 1rem;
             color: var(--text-light);
         }
-
         a {
             text-decoration: none;
             color: inherit;
         }
-
         ul {
             list-style: none;
         }
-
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         .btn {
             display: inline-block;
             padding: 12px 28px;
@@ -114,25 +101,20 @@
             cursor: pointer;
             font-size: 1rem;
         }
-
         .btn:hover {
             background-color: var(--dark-blue);
             transform: translateY(-2px);
             box-shadow: var(--shadow);
         }
-
         .btn-secondary {
             background-color: transparent;
             border: 2px solid var(--primary-blue);
             color: var(--primary-blue);
         }
-
         .btn-secondary:hover {
             background-color: var(--primary-blue);
             color: var(--white);
         }
-
-        /* Header Styles - REDESIGNED WITH NAV ON RIGHT */
         header {
             background-color: var(--white);
             box-shadow: var(--shadow);
@@ -140,7 +122,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .header-container {
             display: flex;
             justify-content: space-between;
@@ -151,20 +132,17 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-
         .logo {
             display: flex;
             align-items: center;
             flex-shrink: 0;
         }
-
         .logo-link {
             display: flex;
             align-items: center;
             gap: 15px;
             text-decoration: none;
         }
-
         .logo-img {
             width: 150px;
             height: 80px;
@@ -178,25 +156,21 @@
             flex-shrink: 0;
             transition: var(--transition);
         }
-
         .logo-img:hover {
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(0, 106, 254, 0.15);
         }
-
         .logo-img img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             padding: 10px;
         }
-
         .desktop-nav {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-
         .nav-link {
             padding: 12px 18px;
             font-weight: 500;
@@ -207,12 +181,10 @@
             font-size: 0.95rem;
             border-radius: var(--border-radius);
         }
-
         .nav-link:hover, .nav-link.active {
             background-color: var(--primary-blue);
             color: var(--white);
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -224,11 +196,9 @@
             background-color: var(--accent-gold);
             transition: var(--transition);
         }
-
         .nav-link:hover::after, .nav-link.active::after {
             width: 80%;
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -239,7 +209,6 @@
             padding: 5px;
             flex-shrink: 0;
         }
-
         .mobile-nav {
             position: fixed;
             top: 80px;
@@ -258,13 +227,11 @@
             overflow-y: auto;
             display: flex;
         }
-
         .mobile-nav.active {
             transform: translateY(0);
             opacity: 1;
             visibility: visible;
         }
-
         .mobile-nav .nav-link {
             padding: 15px 20px;
             border-bottom: 1px solid var(--medium-gray);
@@ -274,25 +241,20 @@
             width: 100%;
             color: var(--primary-dark);
         }
-
         .mobile-nav .nav-link:last-child {
             border-bottom: none;
         }
-
-        /* Hero Section */
         .hero {
             position: relative;
             height: 600px;
             overflow: hidden;
             margin-bottom: 50px;
         }
-
         .slideshow-container {
             position: relative;
             height: 100%;
             width: 100%;
         }
-
         .slide {
             position: absolute;
             top: 0;
@@ -306,11 +268,9 @@
             display: flex;
             align-items: center;
         }
-
         .slide.active {
             opacity: 1;
         }
-
         .slide-overlay {
             position: absolute;
             top: 0;
@@ -319,7 +279,6 @@
             height: 100%;
             background: linear-gradient(90deg, rgba(35,31,32,0.85) 0%, rgba(35,31,32,0.6) 50%, transparent 100%);
         }
-
         .slide-content {
             position: relative;
             z-index: 2;
@@ -327,20 +286,17 @@
             max-width: 700px;
             padding: 0 40px;
         }
-
         .slide-content h1 {
             font-size: 3.2rem;
             margin-bottom: 1.5rem;
             color: var(--white);
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
-
         .slide-content p {
             font-size: 1.3rem;
             color: rgba(255,255,255,0.9);
             margin-bottom: 2rem;
         }
-
         .slide-indicators {
             position: absolute;
             bottom: 30px;
@@ -351,7 +307,6 @@
             gap: 12px;
             z-index: 10;
         }
-
         .indicator {
             width: 12px;
             height: 12px;
@@ -360,12 +315,10 @@
             cursor: pointer;
             transition: var(--transition);
         }
-
         .indicator.active {
             background-color: var(--primary-blue);
             transform: scale(1.2);
         }
-
         .slide-nav-btn {
             position: absolute;
             top: 50%;
@@ -384,20 +337,15 @@
             align-items: center;
             justify-content: center;
         }
-
         .slide-nav-btn:hover {
             background-color: var(--primary-blue);
         }
-
         .prev-slide {
             left: 20px;
         }
-
         .next-slide {
             right: 20px;
         }
-
-        /* Stats Counter */
         .stats-counter {
             background-color: var(--primary-dark);
             color: var(--white);
@@ -406,18 +354,15 @@
             position: relative;
             z-index: 5;
         }
-
         .stats-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             text-align: center;
         }
-
         .stat-item {
             padding: 20px;
         }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
@@ -428,16 +373,13 @@
             justify-content: center;
             gap: 10px;
         }
-
         .stat-number i {
             font-size: 2rem;
         }
-
         .stat-label {
             font-size: 1rem;
             color: rgba(255,255,255,0.8);
         }
-
         .info-item {
             display: flex;
             align-items: center;
@@ -445,47 +387,36 @@
             color: var(--primary-dark);
             font-weight: 500;
         }
-
         .info-item i {
             color: var(--primary-blue);
             font-size: 1.2rem;
         }
-
-        /* Main Content */
         main {
             padding: 40px 0;
         }
-
         .section {
             padding: 80px 0;
         }
-
         .section:nth-child(even) {
             background-color: var(--light-gray);
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 50px;
         }
-
         .section-header h2 {
             display: inline-block;
         }
-
         .section-header p {
             max-width: 700px;
             margin: 0 auto;
         }
-
-        /* Services Section - MODIFIED FOR 4 CARDS IN ONE ROW ON DESKTOP */
         .services-container {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);  /* 4 equal columns on desktop */
-            gap: 20px; /* Slightly reduced gap to ensure fit */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             margin-top: 40px;
         }
-
         .service-card {
             background-color: var(--white);
             border-radius: var(--border-radius);
@@ -496,12 +427,10 @@
             display: flex;
             flex-direction: column;
         }
-
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-heavy);
         }
-
         .service-image {
             height: 200px;
             width: 100%;
@@ -509,7 +438,6 @@
             background-position: center;
             position: relative;
         }
-
         .service-overlay {
             position: absolute;
             top: 0;
@@ -518,7 +446,6 @@
             height: 100%;
             background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
         }
-
         .service-title {
             position: absolute;
             bottom: 20px;
@@ -528,30 +455,25 @@
             font-weight: 600;
             z-index: 2;
         }
-
         .service-content {
             padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-
         .service-content p {
             margin-bottom: 20px;
             flex-grow: 1;
         }
-
         .service-features {
             margin-bottom: 20px;
         }
-
         .service-features li {
             margin-bottom: 8px;
             color: var(--text-light);
             position: relative;
             padding-left: 20px;
         }
-
         .service-features li:before {
             content: '✓';
             position: absolute;
@@ -559,15 +481,12 @@
             color: var(--primary-blue);
             font-weight: bold;
         }
-
-        /* Feature Cards */
         .feature-cards {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
-
         .feature-card {
             background-color: var(--white);
             border-radius: var(--border-radius);
@@ -578,12 +497,10 @@
             text-align: center;
             border-top: 4px solid var(--primary-blue);
         }
-
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-heavy);
         }
-
         .feature-icon {
             width: 80px;
             height: 80px;
@@ -596,14 +513,11 @@
             color: var(--primary-blue);
             font-size: 2rem;
         }
-
-        /* Values Section */
         .values-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-
         .value-card {
             background-color: var(--white);
             padding: 40px 30px;
@@ -614,11 +528,9 @@
             position: relative;
             overflow: hidden;
         }
-
         .value-card:hover {
             transform: translateY(-5px);
         }
-
         .value-card:before {
             content: '';
             position: absolute;
@@ -628,7 +540,6 @@
             height: 5px;
             background-color: var(--primary-blue);
         }
-
         .value-icon {
             width: 70px;
             height: 70px;
@@ -641,8 +552,6 @@
             color: var(--primary-blue);
             font-size: 1.8rem;
         }
-
-        /* Clients Section - UPDATED LIST */
         .clients-container {
             display: flex;
             justify-content: center;
@@ -650,7 +559,6 @@
             gap: 40px;
             margin-top: 40px;
         }
-
         .client-logo {
             width: 180px;
             height: 100px;
@@ -667,26 +575,62 @@
             font-size: 1.1rem;
             text-align: center;
         }
-
         .client-logo:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-heavy);
         }
-
-        /* Contact Section - UPDATED ADDRESS & PHONE */
+        .partners-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .partner-card {
+            width: 210px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 15px 15px 15px;
+        }
+        .partner-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-heavy);
+        }
+        .partner-logo-img {
+            width: 110px;
+            height: 110px;
+            object-fit: contain;
+            margin-bottom: 15px;
+            background-color: var(--light-gray);
+            border-radius: 12px;
+            padding: 8px;
+        }
+        .partner-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary-dark);
+            text-align: center;
+            border-top: 1px solid var(--medium-gray);
+            padding-top: 12px;
+            width: 100%;
+        }
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
             margin-top: 40px;
         }
-
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
-
         .contact-card {
             background-color: var(--white);
             padding: 30px;
@@ -698,11 +642,9 @@
             text-align: left;
             transition: var(--transition);
         }
-
         .contact-card:hover {
             transform: translateY(-5px);
         }
-
         .contact-icon {
             width: 60px;
             height: 60px;
@@ -715,31 +657,26 @@
             color: var(--primary-blue);
             font-size: 1.5rem;
         }
-
         .contact-form-container {
             background-color: var(--white);
             padding: 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
-
         .contact-form-container h3 {
             text-align: center;
             margin-bottom: 30px;
             color: var(--primary-dark);
         }
-
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--primary-dark);
         }
-
         .form-control {
             width: 100%;
             padding: 14px 16px;
@@ -750,26 +687,21 @@
             transition: var(--transition);
             background-color: var(--light-gray);
         }
-
         .form-control:focus {
             outline: none;
             border-color: var(--primary-blue);
             box-shadow: 0 0 0 3px rgba(0, 106, 254, 0.1);
             background-color: var(--white);
         }
-
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-
         .form-row {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
-        /* Subscription Popup */
         .subscription-popup {
             position: fixed;
             bottom: 20px;
@@ -784,25 +716,20 @@
             transition: transform 0.5s ease;
             border-left: 5px solid var(--primary-blue);
         }
-
         .subscription-popup.active {
             transform: translateY(0);
         }
-
         .subscription-popup h3 {
             margin-bottom: 10px;
             color: var(--primary-dark);
         }
-
         .subscription-popup p {
             margin-bottom: 20px;
             color: var(--text-light);
         }
-
         .subscription-form .form-group {
             margin-bottom: 15px;
         }
-
         .close-popup {
             position: absolute;
             top: 15px;
@@ -814,48 +741,39 @@
             cursor: pointer;
             transition: var(--transition);
         }
-
         .close-popup:hover {
             color: var(--primary-blue);
         }
-
-        /* Footer - UPDATED CONTACT */
         footer {
             background-color: var(--primary-dark);
             color: var(--white);
             padding: 60px 0 30px;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
         }
-
         .footer-column h3 {
             color: var(--white);
             margin-bottom: 20px;
             font-size: 1.3rem;
         }
-
         .footer-column p, .footer-column a {
             color: rgba(255,255,255,0.8);
             margin-bottom: 10px;
             display: block;
             transition: var(--transition);
         }
-
         .footer-column a:hover {
             color: var(--primary-blue);
         }
-
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-
         .social-link {
             width: 40px;
             height: 40px;
@@ -866,12 +784,10 @@
             justify-content: center;
             transition: var(--transition);
         }
-
         .social-link:hover {
             background-color: var(--primary-blue);
             transform: translateY(-3px);
         }
-
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -879,23 +795,18 @@
             color: rgba(255,255,255,0.7);
             font-size: 0.9rem;
         }
-
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 15px;
         }
-
         .footer-links a {
             color: rgba(255,255,255,0.7);
         }
-
         .footer-links a:hover {
             color: var(--primary-blue);
         }
-
-        /* Back to top button */
         .back-to-top {
             position: fixed;
             bottom: 30px;
@@ -915,143 +826,112 @@
             transition: var(--transition);
             z-index: 999;
         }
-
         .back-to-top.visible {
             opacity: 1;
             visibility: visible;
         }
-
         .back-to-top:hover {
             background-color: var(--dark-blue);
             transform: translateY(-5px);
         }
-
-        /* Mobile Responsive Overrides */
         @media (max-width: 992px) {
             .services-container {
-                grid-template-columns: repeat(2, 1fr); /* 2 cards on tablet */
+                grid-template-columns: repeat(2, 1fr);
             }
-            
             h1 {
                 font-size: 2.2rem;
             }
-            
             h2 {
                 font-size: 1.8rem;
             }
-            
             .slide-content h1 {
                 font-size: 2.5rem;
             }
-            
             .hero {
                 height: 600px;
             }
-            
             .desktop-nav {
                 display: none;
             }
-            
             .mobile-menu-btn {
                 display: block;
             }
-            
             .logo-img {
                 width: 150px;
                 height: 80px;
             }
-            
             .subscription-popup {
                 width: 300px;
                 right: 10px;
                 bottom: 10px;
             }
         }
-
         @media (max-width: 768px) {
             .services-container {
-                grid-template-columns: 1fr; /* 1 card on mobile */
+                grid-template-columns: 1fr;
             }
-            
             .slide-content h1 {
                 font-size: 2rem;
             }
-            
             .slide-content p {
                 font-size: 1rem;
             }
-            
             .hero {
                 height: 500px;
                 margin-bottom: 60px;
             }
-            
             .stats-counter {
                 margin-top: -60px;
                 padding: 40px 0;
             }
-            
             .stat-number {
                 font-size: 2rem;
             }
-            
             .section {
                 padding: 60px 0;
             }
-            
             .contact-form-container {
                 padding: 30px 20px;
             }
-            
             .slide-nav-btn {
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
             }
-            
             .form-row {
                 grid-template-columns: 1fr;
             }
-            
             .logo-img {
                 width: 130px;
                 height: 70px;
             }
-            
             .subscription-popup {
                 width: calc(100% - 20px);
                 right: 10px;
                 left: 10px;
                 bottom: 10px;
             }
-            
             .contact-container {
                 grid-template-columns: 1fr;
             }
         }
-
         @media (max-width: 576px) {
             .slide-content h1 {
                 font-size: 1.8rem;
             }
-            
             .hero {
                 height: 450px;
             }
-            
             .feature-cards, .values-container {
                 grid-template-columns: 1fr;
             }
-            
             .footer-content {
                 grid-template-columns: 1fr;
             }
-            
             .logo-img {
                 width: 120px;
                 height: 65px;
             }
-            
             .header-container {
                 padding: 10px 15px;
             }
@@ -1059,7 +939,6 @@
     </style>
 </head>
 <body>
-    <!-- Header with Right-Side Navigation -->
     <header>
         <div class="header-container">
             <div class="logo">
@@ -1069,7 +948,6 @@
                     </div>
                 </a>
             </div>
-            
             <nav class="desktop-nav">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -1079,12 +957,10 @@
                 <a href="media.html" class="nav-link" target="_blank">Media & News</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        
         <nav class="mobile-nav" id="mobileNav">
             <a href="#home" class="nav-link active">Home</a>
             <a href="#about" class="nav-link">About</a>
@@ -1095,8 +971,6 @@
             <a href="#contact" class="nav-link">Contact Us</a>
         </nav>
     </header>
-
-    <!-- Hero Section with Slideshow -->
     <section class="hero" id="home">
         <div class="slideshow-container">
             <div class="slide active" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('airportaccra.jpg');">
@@ -1107,7 +981,6 @@
                     <a href="#about" class="btn">Discover More</a>
                 </div>
             </div>
-            
             <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('investment.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
@@ -1116,7 +989,6 @@
                     <a href="#services" class="btn">Our Services</a>
                 </div>
             </div>
-            
             <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.6)), url('assistance.jpg');">
                 <div class="slide-overlay"></div>
                 <div class="slide-content">
@@ -1125,14 +997,12 @@
                     <a href="#contact" class="btn">Partner With Us</a>
                 </div>
             </div>
-            
             <button class="slide-nav-btn prev-slide">
                 <i class="fas fa-chevron-left"></i>
             </button>
             <button class="slide-nav-btn next-slide">
                 <i class="fas fa-chevron-right"></i>
             </button>
-            
             <div class="slide-indicators">
                 <div class="indicator active" data-slide="0"></div>
                 <div class="indicator" data-slide="1"></div>
@@ -1140,8 +1010,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Stats Counter -->
     <section class="stats-counter">
         <div class="container stats-container">
             <div class="stat-item">
@@ -1174,16 +1042,12 @@
             </div>
         </div>
     </section>
-
-    <!-- Main Content -->
     <main class="container">
-        <!-- About Section -->
         <section class="section" id="about">
             <div class="section-header">
                 <h2>About Us</h2>
                 <p>Remat Holdings Limited is a diversified company with an exceptional reputation for ethical, progressive, sustainable and global business best practices, headquartered in Accra, Ghana with operations across Africa.</p>
             </div>
-            
             <div class="feature-cards">
                 <div class="feature-card">
                     <div class="feature-icon">
@@ -1192,7 +1056,6 @@
                     <h3>Our Vision</h3>
                     <p>Building Africa's Sustainable Future through transformative solutions that address local challenges while meeting international standards.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
@@ -1200,7 +1063,6 @@
                     <h3>Our Mission</h3>
                     <p>To leverage technology and innovation to transform diverse sectors of the African economy including finance, real estate, agriculture, and mining.</p>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-map-marked-alt"></i>
@@ -1210,14 +1072,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- Services Section with 4 cards in one row on desktop -->
         <section class="section" id="services">
             <div class="section-header">
                 <h2>Our Services</h2>
                 <p>We operate through a multi-vertical holding structure, combining direct investments, subsidiary operations, strategic partnerships and advisory services.</p>
             </div>
-            
             <div class="services-container">
                 <div class="service-card">
                     <div class="service-image" style="background-image: url('hrservices.jpg');">
@@ -1227,7 +1086,6 @@
                     <div class="service-content">
                         <p><strong>Staff Recruitment & HR Management</strong></p>
                         <p>Remat Services offers various services in the field of outsourcing including executive recruitment, workforce outsourcing, HR administration and payroll management.</p>
-                        
                         <div class="service-features">
                             <ul>
                                 <li>Executive and professional recruitment</li>
@@ -1236,11 +1094,9 @@
                                 <li>Payroll management and compliance support</li>
                             </ul>
                         </div>
-                        
                         <a href="hrservices.html" class="btn">Learn More</a>
                     </div>
                 </div>
-                
                 <div class="service-card">
                     <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
                         <div class="service-overlay"></div>
@@ -1249,7 +1105,6 @@
                     <div class="service-content">
                         <p><strong>Investment & Business Development</strong></p>
                         <p>Identifying, structuring, and managing investments in high-growth sectors across Africa from early-stage development through expansion and maturity.</p>
-                        
                         <div class="service-features">
                             <ul>
                                 <li>Strategic equity and project investments</li>
@@ -1258,11 +1113,9 @@
                                 <li>Joint ventures and public-private partnerships</li>
                             </ul>
                         </div>
-                        
                         <a href="investment.html" class="btn">Learn More</a>
                     </div>
                 </div>
-                
                 <div class="service-card">
                     <div class="service-image" style="background-image: url('solutions.jpg');">
                         <div class="service-overlay"></div>
@@ -1271,7 +1124,6 @@
                     <div class="service-content">
                         <p><strong>Fintech, Real Estate, Agriculture, Healthcare</strong></p>
                         <p>We provide integrated solutions across multiple sectors, combining technology, market insight, and operational expertise.</p>
-                        
                         <div class="service-features">
                             <ul>
                                 <li>Digital financial services and platforms</li>
@@ -1280,21 +1132,17 @@
                                 <li>Healthcare service support</li>
                             </ul>
                         </div>
-                        
                         <a href="services.html#sector-solutions" class="btn">Learn More</a>
                     </div>
                 </div>
-                
                 <div class="service-card">
                     <div class="service-image" style="background-image: url('oil&gas.jpg');">
                         <div class="service-overlay"></div>
-                        <!-- Changed title from Remat Oil & Gas to Remat Energies -->
                         <h3 class="service-title">Remat Energies</h3>
                     </div>
                     <div class="service-content">
                         <p><strong>Support Services</strong></p>
                         <p>Support services in the Energy industry including Renewable and Non-Renewable energies and operational support solutions.</p>
-                        
                         <div class="service-features">
                             <ul>
                                 <li>System Proposals and Documentation</li>
@@ -1303,20 +1151,16 @@
                                 <li>Operational support and compliance solutions</li>
                             </ul>
                         </div>
-                        
                         <a href="services.html#oil-gas" class="btn">Learn More</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Why Choose Us Section -->
         <section class="section" id="values">
             <div class="section-header">
                 <h2>Why Choose Us?</h2>
                 <p>Our core values guide how we conduct business, engage with stakeholders, and create value across all our operations.</p>
             </div>
-            
             <div class="values-container">
                 <div class="value-card">
                     <div class="value-icon">
@@ -1325,7 +1169,6 @@
                     <h3>Excellence</h3>
                     <p>We maintain the highest standards of quality and performance across all our business units and operations.</p>
                 </div>
-                
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-balance-scale"></i>
@@ -1333,7 +1176,6 @@
                     <h3>Integrity</h3>
                     <p>We hold ourselves to the highest moral and professional standards, ensuring ethical conduct in all operations.</p>
                 </div>
-                
                 <div class="value-card">
                     <div class="value-icon">
                         <i class="fas fa-shield-alt"></i>
@@ -1343,14 +1185,11 @@
                 </div>
             </div>
         </section>
-
-        <!-- Clients Section with updated list -->
         <section class="section" id="clients">
             <div class="section-header">
                 <h2>Our Clients</h2>
                 <p>We serve a broad client base across multiple sectors, ensuring long-term relationships built on trust, performance, and shared success.</p>
             </div>
-            
             <div class="clients-container">
                 <div class="client-logo">Financial Institutions</div>
                 <div class="client-logo">Agribusinesses</div>
@@ -1359,39 +1198,39 @@
                 <div class="client-logo">Mining Companies</div>
                 <div class="client-logo">Power Generators</div>
                 <div class="client-logo">Petrochemical Companies</div>
-                <!-- Kept original ones for context, but you can adjust order. Now includes all. -->
             </div>
         </section>
-
-        <!-- Partnerships Section -->
         <section class="section" id="partnerships">
             <div class="section-header">
                 <h2>Partnerships</h2>
                 <p>Remat Holdings actively seeks partnerships with local and international organizations to drive impactful and commercially viable opportunities across Africa.</p>
             </div>
-            
-            <div class="clients-container">
-                <div class="client-logo">Paypoint</div>
-                <div class="client-logo">Symphony</div>
-                <div class="client-logo">Empire Partner Foundation (EPF)</div>
+            <div class="partners-flex">
+                <div class="partner-card">
+                    <img class="partner-logo-img" src="paypoint.png" alt="Paypoint logo">
+                    <div class="partner-name">Paypoint</div>
+                </div>
+                <div class="partner-card">
+                    <img class="partner-logo-img" src="symphony.png" alt="Symphony logo">
+                    <div class="partner-name">Symphony</div>
+                </div>
+                <div class="partner-card">
+                    <img class="partner-logo-img" src="EPF.png" alt="Empire Partner Foundation logo">
+                    <div class="partner-name">Empire Partner Foundation</div>
+                </div>
             </div>
-            
             <div style="text-align: center; margin-top: 40px;">
                 <p><strong>Partnership Enquiries:</strong> info@rematholdings.com</p>
                 <a href="#contact" class="btn">Contact Us</a>
             </div>
         </section>
-
-        <!-- Contact Section with updated address and phone -->
         <section class="section" id="contact">
             <div class="section-header">
                 <h2>Contact Us</h2>
                 <p>Get in touch with our team to explore investment opportunities, partnership possibilities, or learn more about our services.</p>
             </div>
-            
             <div class="contact-container">
                 <div class="contact-info">
-                    <!-- Updated address card -->
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -1399,8 +1238,6 @@
                         <h3>Head Office</h3>
                         <p>4th floor, One Airport Square<br>Airport city, Accra, Ghana</p>
                     </div>
-                    
-                    <!-- Updated telephone card with new number -->
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
@@ -1408,7 +1245,6 @@
                         <h3>Telephone</h3>
                         <p>+233(0)308183994</p>
                     </div>
-                    
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -1416,7 +1252,6 @@
                         <h3>Email</h3>
                         <p>info@rematholdings.com</p>
                     </div>
-                    
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
@@ -1425,7 +1260,6 @@
                         <p>Monday – Friday<br>08:00am – 05:00pm</p>
                     </div>
                 </div>
-                
                 <div class="contact-form-container">
                     <h3>Send Us a Message</h3>
                     <form id="contactForm">
@@ -1434,31 +1268,25 @@
                                 <label for="name">Full Name *</label>
                                 <input type="text" id="name" class="form-control" required>
                             </div>
-                            
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
                                 <input type="email" id="email" class="form-control" required>
                             </div>
                         </div>
-                        
                         <div class="form-group">
                             <label for="subject">Subject *</label>
                             <input type="text" id="subject" class="form-control" required>
                         </div>
-                        
                         <div class="form-group">
                             <label for="message">Message *</label>
                             <textarea id="message" class="form-control" rows="5" required></textarea>
                         </div>
-                        
                         <button type="submit" class="btn" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-
-    <!-- Subscription Popup -->
     <div class="subscription-popup" id="subscriptionPopup">
         <button class="close-popup" id="closePopup">
             <i class="fas fa-times"></i>
@@ -1472,8 +1300,6 @@
             <button type="submit" class="btn">Subscribe</button>
         </form>
     </div>
-
-    <!-- Footer with updated contact info -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1486,7 +1312,6 @@
                         <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <a href="#home">Home</a>
@@ -1497,15 +1322,13 @@
                     <a href="media.html" target="_blank">Media & News</a>
                     <a href="#contact">Contact Us</a>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Business Units</h3>
                     <a href="services.html#hr-services">Remat Services</a>
                     <a href="services.html#investment-services">Remat Investments</a>
                     <a href="services.html#sector-solutions">Sector Solutions</a>
-                    <a href="services.html#oil-gas">Remat Energies</a> <!-- updated name -->
+                    <a href="services.html#oil-gas">Remat Energies</a>
                 </div>
-                
                 <div class="footer-column">
                     <h3>Contact Info</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 4th floor, One Airport Square, Airport city, Accra</p>
@@ -1514,7 +1337,6 @@
                     <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm</p>
                 </div>
             </div>
-            
             <div class="copyright">
                 <p>© 2026 Remat Holdings Limited. All Rights Reserved.</p>
                 <div class="footer-links">
@@ -1525,17 +1347,12 @@
             </div>
         </div>
     </footer>
-
-    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
-
     <script>
-        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileNav = document.getElementById('mobileNav');
-        
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
             const icon = mobileMenuBtn.querySelector('i');
@@ -1547,49 +1364,37 @@
                 icon.classList.add('fa-bars');
             }
         });
-        
-        // Close mobile menu when clicking a link
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
                 mobileMenuBtn.querySelector('i').classList.remove('fa-times');
                 mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                
-                // Update active nav link
                 navLinks.forEach(navLink => navLink.classList.remove('active'));
                 link.classList.add('active');
             });
         });
-        
-        // Slideshow Functionality
         const slides = document.querySelectorAll('.slide');
         const indicators = document.querySelectorAll('.indicator');
         const prevBtn = document.querySelector('.prev-slide');
         const nextBtn = document.querySelector('.next-slide');
         let currentSlide = 0;
-        
         function showSlide(index) {
             slides.forEach(slide => slide.classList.remove('active'));
             indicators.forEach(indicator => indicator.classList.remove('active'));
-            
             slides[index].classList.add('active');
             indicators[index].classList.add('active');
             currentSlide = index;
         }
-        
         function nextSlide() {
             let nextIndex = (currentSlide + 1) % slides.length;
             showSlide(nextIndex);
         }
-        
         function prevSlide() {
             let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(prevIndex);
         }
-        
         let slideInterval = setInterval(nextSlide, 5000);
-        
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 clearInterval(slideInterval);
@@ -1597,27 +1402,22 @@
                 slideInterval = setInterval(nextSlide, 5000);
             });
         });
-        
         prevBtn.addEventListener('click', () => {
             clearInterval(slideInterval);
             prevSlide();
             slideInterval = setInterval(nextSlide, 5000);
         });
-        
         nextBtn.addEventListener('click', () => {
             clearInterval(slideInterval);
             nextSlide();
             slideInterval = setInterval(nextSlide, 5000);
         });
-        
-        // Stats Counter (simplified)
         const statElements = {
             countries: { target: 7, current: 0, increment: 1, interval: null },
             sectors: { target: 6, current: 0, increment: 1, interval: null },
             partners: { target: 50, current: 0, increment: 2, interval: null },
             years: { target: 10, current: 0, increment: 1, interval: null }
         };
-        
         function animateStat(statId, element) {
             const stat = statElements[statId];
             if (stat.current < stat.target) {
@@ -1628,7 +1428,6 @@
                 clearInterval(stat.interval);
             }
         }
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1643,41 +1442,30 @@
                 }
             });
         }, { threshold: 0.5 });
-        
         observer.observe(document.querySelector('.stats-counter'));
-        
-        // Back to Top Button
         const backToTop = document.getElementById('backToTop');
-        
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
                 backToTop.classList.add('visible');
             } else {
                 backToTop.classList.remove('visible');
             }
-            
-            // Subscription popup logic
             const subscriptionPopup = document.getElementById('subscriptionPopup');
             const scrollPosition = window.innerHeight + window.pageYOffset;
             const pageHeight = document.documentElement.scrollHeight;
-            
             if (scrollPosition >= pageHeight - 100 && !localStorage.getItem('subscriptionShown')) {
                 setTimeout(() => {
                     subscriptionPopup.classList.add('active');
                 }, 1000);
             }
         });
-        
-        // Subscription Popup
         const subscriptionPopup = document.getElementById('subscriptionPopup');
         const closePopup = document.getElementById('closePopup');
         const subscriptionForm = document.getElementById('subscriptionForm');
-        
         closePopup.addEventListener('click', () => {
             subscriptionPopup.classList.remove('active');
             localStorage.setItem('subscriptionShown', 'true');
         });
-        
         subscriptionForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = subscriptionForm.querySelector('input[type="email"]').value;
@@ -1686,27 +1474,19 @@
             subscriptionPopup.classList.remove('active');
             localStorage.setItem('subscriptionShown', 'true');
         });
-        
-        // Contact Form Submission
         const contactForm = document.getElementById('contactForm');
-        
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             alert(`Thank you ${name}! Your message has been received. We'll contact you at ${email} shortly.`);
             contactForm.reset();
         });
-        
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -1719,6 +1499,3 @@
     </script>
 </body>
 </html>
-
-
-
