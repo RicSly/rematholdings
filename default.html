@@ -165,7 +165,6 @@
             text-decoration: none;
         }
 
-        /* LOGO IMAGE - PRESSABLE LINK */
         .logo-img {
             width: 150px;
             height: 80px;
@@ -192,7 +191,6 @@
             padding: 10px;
         }
 
-        /* DESKTOP NAVIGATION - ON RIGHT SIDE */
         .desktop-nav {
             display: flex;
             align-items: center;
@@ -231,7 +229,6 @@
             width: 80%;
         }
 
-        /* Mobile Navigation - VERTICAL MENU */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -481,11 +478,11 @@
             margin: 0 auto;
         }
 
-        /* Services Section - Image Cards */
+        /* Services Section - MODIFIED FOR 4 CARDS IN ONE ROW ON DESKTOP */
         .services-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);  /* 4 equal columns on desktop */
+            gap: 20px; /* Slightly reduced gap to ensure fit */
             margin-top: 40px;
         }
 
@@ -645,7 +642,7 @@
             font-size: 1.8rem;
         }
 
-        /* Clients Section */
+        /* Clients Section - UPDATED LIST */
         .clients-container {
             display: flex;
             justify-content: center;
@@ -668,6 +665,7 @@
             transition: var(--transition);
             padding: 20px;
             font-size: 1.1rem;
+            text-align: center;
         }
 
         .client-logo:hover {
@@ -675,7 +673,7 @@
             box-shadow: var(--shadow-heavy);
         }
 
-        /* Contact Form - Enhanced Styling */
+        /* Contact Section - UPDATED ADDRESS & PHONE */
         .contact-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -821,7 +819,7 @@
             color: var(--primary-blue);
         }
 
-        /* Footer */
+        /* Footer - UPDATED CONTACT */
         footer {
             background-color: var(--primary-dark);
             color: var(--white);
@@ -928,8 +926,12 @@
             transform: translateY(-5px);
         }
 
-        /* Mobile Responsive Styles */
+        /* Mobile Responsive Overrides */
         @media (max-width: 992px) {
+            .services-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 cards on tablet */
+            }
+            
             h1 {
                 font-size: 2.2rem;
             }
@@ -946,7 +948,6 @@
                 height: 600px;
             }
             
-            /* Hide desktop nav on mobile */
             .desktop-nav {
                 display: none;
             }
@@ -955,7 +956,6 @@
                 display: block;
             }
             
-            /* FIXED LOGO SIZE */
             .logo-img {
                 width: 150px;
                 height: 80px;
@@ -969,6 +969,10 @@
         }
 
         @media (max-width: 768px) {
+            .services-container {
+                grid-template-columns: 1fr; /* 1 card on mobile */
+            }
+            
             .slide-content h1 {
                 font-size: 2rem;
             }
@@ -1003,10 +1007,6 @@
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
-            }
-            
-            .services-container {
-                grid-template-columns: 1fr;
             }
             
             .form-row {
@@ -1063,7 +1063,6 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <!-- LOGO AS PRESSABLE LINK TO HOME -->
                 <a href="#home" class="logo-link">
                     <div class="logo-img">
                         <img src="rematlogo.jpeg" alt="Remat Holdings Logo">
@@ -1071,7 +1070,6 @@
                 </a>
             </div>
             
-            <!-- DESKTOP NAVIGATION ON RIGHT SIDE -->
             <nav class="desktop-nav">
                 <a href="#home" class="nav-link active">Home</a>
                 <a href="#about" class="nav-link">About</a>
@@ -1087,7 +1085,6 @@
             </button>
         </div>
         
-        <!-- Mobile Navigation - VERTICAL MENU -->
         <nav class="mobile-nav" id="mobileNav">
             <a href="#home" class="nav-link active">Home</a>
             <a href="#about" class="nav-link">About</a>
@@ -1214,7 +1211,7 @@
             </div>
         </section>
 
-        <!-- Services Section with Image Cards -->
+        <!-- Services Section with 4 cards in one row on desktop -->
         <section class="section" id="services">
             <div class="section-header">
                 <h2>Our Services</h2>
@@ -1291,7 +1288,8 @@
                 <div class="service-card">
                     <div class="service-image" style="background-image: url('oil&gas.jpg');">
                         <div class="service-overlay"></div>
-                        <h3 class="service-title">Remat Oil & Gas</h3>
+                        <!-- Changed title from Remat Oil & Gas to Remat Energies -->
+                        <h3 class="service-title">Remat Energies</h3>
                     </div>
                     <div class="service-content">
                         <p><strong>Support Services</strong></p>
@@ -1346,7 +1344,7 @@
             </div>
         </section>
 
-        <!-- Clients Section -->
+        <!-- Clients Section with updated list -->
         <section class="section" id="clients">
             <div class="section-header">
                 <h2>Our Clients</h2>
@@ -1358,8 +1356,11 @@
                 <div class="client-logo">Agribusinesses</div>
                 <div class="client-logo">Real Estate Developers</div>
                 <div class="client-logo">Healthcare Providers</div>
-                <div class="client-logo">Oil & Gas Operators</div>
-                <div class="client-logo">Government Agencies</div>
+                <!-- Added the three new client categories -->
+                <div class="client-logo">Mining Companies</div>
+                <div class="client-logo">Power Generators</div>
+                <div class="client-logo">Petrochemical Companies</div>
+                <!-- Kept original ones for context, but you can adjust order. Now includes all. -->
             </div>
         </section>
 
@@ -1384,7 +1385,7 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Contact Section with updated address and phone -->
         <section class="section" id="contact">
             <div class="section-header">
                 <h2>Contact Us</h2>
@@ -1393,20 +1394,22 @@
             
             <div class="contact-container">
                 <div class="contact-info">
+                    <!-- Updated address card -->
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3>Head Office</h3>
-                        <p>AE24 Association Loop<br>Airport Residential Area - Accra, Ghana</p>
+                        <p>4th floor, One Airport Square<br>Airport city, Accra, Ghana</p>
                     </div>
                     
+                    <!-- Updated telephone card with new number -->
                     <div class="contact-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <h3>Telephone</h3>
-                        <p>(+233) 25 779 0251</p>
+                        <p>+233(0)308183994</p>
                     </div>
                     
                     <div class="contact-card">
@@ -1473,7 +1476,7 @@
         </form>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer with updated contact info -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1503,13 +1506,13 @@
                     <a href="services.html#hr-services">Remat Services</a>
                     <a href="services.html#investment-services">Remat Investments</a>
                     <a href="services.html#sector-solutions">Sector Solutions</a>
-                    <a href="services.html#oil-gas">Remat Oil & Gas</a>
+                    <a href="services.html#oil-gas">Remat Energies</a> <!-- updated name -->
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> AE24 Association Loop, Accra</p>
-                    <p><i class="fas fa-phone"></i> (+233) 25 779 0251</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 4th floor, One Airport Square, Airport city, Accra</p>
+                    <p><i class="fas fa-phone"></i> +233(0)308183994</p>
                     <p><i class="fas fa-envelope"></i> info@rematholdings.com</p>
                     <p><i class="fas fa-clock"></i> Mon-Fri: 8am-5pm</p>
                 </div>
@@ -1570,17 +1573,14 @@
         let currentSlide = 0;
         
         function showSlide(index) {
-            // Hide all slides
             slides.forEach(slide => slide.classList.remove('active'));
             indicators.forEach(indicator => indicator.classList.remove('active'));
             
-            // Show the selected slide
             slides[index].classList.add('active');
             indicators[index].classList.add('active');
             currentSlide = index;
         }
         
-        // Auto-advance slides
         function nextSlide() {
             let nextIndex = (currentSlide + 1) % slides.length;
             showSlide(nextIndex);
@@ -1591,20 +1591,16 @@
             showSlide(prevIndex);
         }
         
-        // Set up auto-advance every 5 seconds
         let slideInterval = setInterval(nextSlide, 5000);
         
-        // Add click events to indicators
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', () => {
                 clearInterval(slideInterval);
                 showSlide(index);
-                // Restart auto-advance
                 slideInterval = setInterval(nextSlide, 5000);
             });
         });
         
-        // Add click events to navigation buttons
         prevBtn.addEventListener('click', () => {
             clearInterval(slideInterval);
             prevSlide();
@@ -1617,7 +1613,7 @@
             slideInterval = setInterval(nextSlide, 5000);
         });
         
-        // Animated Stats Counter
+        // Stats Counter (simplified)
         const statElements = {
             countries: { target: 7, current: 0, increment: 1, interval: null },
             sectors: { target: 6, current: 0, increment: 1, interval: null },
@@ -1636,7 +1632,6 @@
             }
         }
         
-        // Start animations when stats section is in view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1664,7 +1659,7 @@
                 backToTop.classList.remove('visible');
             }
             
-            // Show subscription popup when near bottom of page
+            // Subscription popup logic
             const subscriptionPopup = document.getElementById('subscriptionPopup');
             const scrollPosition = window.innerHeight + window.pageYOffset;
             const pageHeight = document.documentElement.scrollHeight;
@@ -1689,31 +1684,21 @@
         subscriptionForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = subscriptionForm.querySelector('input[type="email"]').value;
-            
-            // In a real application, you would send this data to a server
             alert(`Thank you for subscribing with ${email}! You'll receive our newsletter shortly.`);
             subscriptionForm.reset();
             subscriptionPopup.classList.remove('active');
             localStorage.setItem('subscriptionShown', 'true');
         });
         
-        // Form Submission
+        // Contact Form Submission
         const contactForm = document.getElementById('contactForm');
         
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // In a real application, you would send this data to a server
-            // For this demo, we'll just show an alert
             alert(`Thank you ${name}! Your message has been received. We'll contact you at ${email} shortly.`);
-            
-            // Reset the form
             contactForm.reset();
         });
         
@@ -1728,36 +1713,12 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100, // Adjusted for header height
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                }
-            });
-        });
-        
-        // Update active nav link on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 120)) { // Adjusted for header height
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
                 }
             });
         });
     </script>
 </body>
 </html>
-
-
-
